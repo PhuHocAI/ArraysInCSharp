@@ -34,6 +34,7 @@ class Program
         //}
         //2. ICollection: kế thừa từ IEnumerable, cung cấp Count, Add, Remove
         //Trong vs, nếu đặt tên có chữ I đứng trước thì đó là interface !CHỈ VISUAL STUDIO!
+        //ICollection có Add, Remove, Count
         ICollection<dynamic> numbers2 = new List<dynamic> { 10, 20, 30 };
         numbers2.Add(66.6f);
         numbers2.Add("Hello");
@@ -42,7 +43,20 @@ class Program
         {
             Console.WriteLine(item);
         }
-        //3. IList: kế thừa từ ICollection, cung cấp IndexOf, Insert, RemoveAt
+        //3. IList: kế thừa từ ICollection và IEnumerable, cung cấp IndexOf, Insert, RemoveAt
+        List<string> fruits = new List<string> { "Apple", "Banana", "Cherry" };
+
+        fruits.Add("Mango");
+        fruits.Remove("Banana");
+
+        foreach (var fruit in fruits)
+        {
+            Console.WriteLine(fruit);
+        }
+        //List khác với Array như nào:
+        //1. List có thể thay đổi kích thước, Array không thể
+        //2. List có thể chứa các kiểu dữ liệu khác nhau, Array không thể
+        //3. List có thể thêm, sửa, xóa phần tử, Array không thể
     }
 
 }
